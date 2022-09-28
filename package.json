@@ -1,0 +1,30 @@
+{
+  "name": "vite-plugin-libfile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "keywords": [
+    "vite",
+    "plugin",
+    "lib",
+    "file"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ten-K/vite-plugin-libfile.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ten-K/vite-plugin-libfile/issues"
+  },
+  "homepage": "https://github.com/Ten-K/vite-plugin-libfile#readme",
+  "dependencies": {
+    "vite": "^3.1.3"
+  }
+}
