@@ -19,7 +19,8 @@ npm i vite-plugin-libfile -D
 
 ```js
 // vite.config.js 
-import libFile from 'vite-plugin-libfile'; // https://vitejs.dev/config/ 
+import libFile from 'vite-plugin-libfile'; 
+// https://vitejs.dev/config/ 
 export default defineConfig({ 
   plugins: [ 
     // any other plugins 
