@@ -4,19 +4,18 @@ const config = {
   outDir: 'dist',
   clean: true,
   minify: true,
-  sourcemap: false
+  sourcemap: false,
+  dts: true
 }
 
 export default defineConfig([
   {
-    entry: ['index.ts'],
-    treeshake: true,
+    entry: ['src/index.ts'],
     format: ['esm'],
     ...config
   },
   {
-    entry: ['index.ts'],
-    treeshake: true,
+    entry: ['src/index.ts'],
     format: ['cjs'],
     ...config
   }

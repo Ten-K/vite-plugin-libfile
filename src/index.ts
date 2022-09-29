@@ -8,7 +8,7 @@ interface Params {
 
 let viteConfig: ResolvedConfig
 
-export default function libFile(params: Params): Plugin {
+module.exports = function libFile(params: Params): Plugin {
 	return {
 		name: 'lib-file',
 		apply: 'build',
@@ -61,3 +61,5 @@ export default function libFile(params: Params): Plugin {
 		}
 	}
 }
+
+module.exports.default = module.exports;

@@ -1,9 +1,4 @@
-import a from 'fs';
-import { resolve } from 'path';
-
-var e;function p(n){return {name:"lib-file",apply:"build",enforce:"post",configResolved(t){e=t;},writeBundle(t,r){if(!n){console.warn("must have at least one parameter.");return}if(!e.build||!e.build.lib){console.warn("vite-plugin-lifile only works in lib mode.");return}if(t.format!=="es")return;let l=Object.keys(r),f=l.filter(i=>n.paths.includes(i));if(!f.length){console.info("No specified file is found");return}for(let i of l){if(!r[i].isEntry)continue;let c=e.build.outDir||"dist",s=resolve(e.root,c,i),d=a.readFileSync(s,{encoding:"utf8"}),o="";f.forEach(u=>{o?o+=`import './${u}';
-`:o=`import './${u}';
-`;}),a.writeFileSync(s,`${o}
-${d}`);}}}}
-
-export { p as default };
+var g=(l,e)=>()=>(e||l((e={exports:{}}).exports,e),e.exports);import d from"fs";import{resolve as v}from"path";var b=g((P,n)=>{var i;n.exports=function(e){return{name:"lib-file",apply:"build",enforce:"post",configResolved(r){i=r},writeBundle(r,s){if(!e){console.warn("must have at least one parameter.");return}if(!i.build||!i.build.lib){console.warn("vite-plugin-lifile only works in lib mode.");return}if(r.format!=="es")return;let f=Object.keys(s),u=f.filter(o=>e.paths.includes(o));if(!u.length){console.info("No specified file is found");return}for(let o of f){if(!s[o].isEntry)continue;let p=i.build.outDir||"dist",a=v(i.root,p,o),m=d.readFileSync(a,{encoding:"utf8"}),t="";u.forEach(c=>{t?t+=`import './${c}';
+`:t=`import './${c}';
+`}),d.writeFileSync(a,`${t}
+${m}`)}}}};n.exports.default=n.exports});export default b();

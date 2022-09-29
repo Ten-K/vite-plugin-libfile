@@ -1,15 +1,4 @@
-'use strict';
-
-var a = require('fs');
-var path = require('path');
-
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
-
-var a__default = /*#__PURE__*/_interopDefaultLegacy(a);
-
-var e;function p(n){return {name:"lib-file",apply:"build",enforce:"post",configResolved(t){e=t;},writeBundle(t,r){if(!n){console.warn("must have at least one parameter.");return}if(!e.build||!e.build.lib){console.warn("vite-plugin-lifile only works in lib mode.");return}if(t.format!=="es")return;let l=Object.keys(r),f=l.filter(i=>n.paths.includes(i));if(!f.length){console.info("No specified file is found");return}for(let i of l){if(!r[i].isEntry)continue;let c=e.build.outDir||"dist",s=path.resolve(e.root,c,i),d=a__default["default"].readFileSync(s,{encoding:"utf8"}),o="";f.forEach(u=>{o?o+=`import './${u}';
-`:o=`import './${u}';
-`;}),a__default["default"].writeFileSync(s,`${o}
-${d}`);}}}}
-
-module.exports = p;
+"use strict";var v=Object.create;var d=Object.defineProperty;var b=Object.getOwnPropertyDescriptor;var y=Object.getOwnPropertyNames;var h=Object.getPrototypeOf,w=Object.prototype.hasOwnProperty;var P=(e,i,o,n)=>{if(i&&typeof i=="object"||typeof i=="function")for(let t of y(i))!w.call(e,t)&&t!==o&&d(e,t,{get:()=>i[t],enumerable:!(n=b(i,t))||n.enumerable});return e};var C=(e,i,o)=>(o=e!=null?v(h(e)):{},P(i||!e||!e.__esModule?d(o,"default",{value:e,enumerable:!0}):o,e));var f=C(require("fs")),p=require("path"),r;module.exports=function(i){return{name:"lib-file",apply:"build",enforce:"post",configResolved(o){r=o},writeBundle(o,n){if(!i){console.warn("must have at least one parameter.");return}if(!r.build||!r.build.lib){console.warn("vite-plugin-lifile only works in lib mode.");return}if(o.format!=="es")return;let t=Object.keys(n),u=t.filter(l=>i.paths.includes(l));if(!u.length){console.info("No specified file is found");return}for(let l of t){if(!n[l].isEntry)continue;let m=r.build.outDir||"dist",a=(0,p.resolve)(r.root,m,l),g=f.default.readFileSync(a,{encoding:"utf8"}),s="";u.forEach(c=>{s?s+=`import './${c}';
+`:s=`import './${c}';
+`}),f.default.writeFileSync(a,`${s}
+${g}`)}}}};module.exports.default=module.exports;
