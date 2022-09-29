@@ -1,3 +1,3 @@
-import type { PluginOption } from 'vite';
+import type { Plugin } from 'vite';
 
-export default function libFile(): PluginOption
+export default function libFile(): Plugin

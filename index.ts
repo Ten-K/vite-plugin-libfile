@@ -1,6 +1,6 @@
 import fs from 'fs'
 import { resolve } from 'path'
-import type { PluginOption, ResolvedConfig } from 'vite'
+import type { Plugin, ResolvedConfig } from 'vite'
 
 interface Params {
   paths: string[]
@@ -8,7 +8,7 @@ interface Params {
 
 let viteConfig: ResolvedConfig
 
-export default function libFile(params: Params): PluginOption {
+export default function libFile(params: Params): Plugin {
 	return {
 		name: 'lib-file',
 		apply: 'build',
