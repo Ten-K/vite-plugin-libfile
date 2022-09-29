@@ -1,4 +1,0 @@
-var g=(l,e)=>()=>(e||l((e={exports:{}}).exports,e),e.exports);import d from"fs";import{resolve as v}from"path";var b=g((P,n)=>{var i;n.exports=function(e){return{name:"lib-file",apply:"build",enforce:"post",configResolved(r){i=r},writeBundle(r,s){if(!e){console.warn("must have at least one parameter.");return}if(!i.build||!i.build.lib){console.warn("vite-plugin-lifile only works in lib mode.");return}if(r.format!=="es")return;let f=Object.keys(s),u=f.filter(o=>e.paths.includes(o));if(!u.length){console.info("No specified file is found");return}for(let o of f){if(!s[o].isEntry)continue;let p=i.build.outDir||"dist",a=v(i.root,p,o),m=d.readFileSync(a,{encoding:"utf8"}),t="";u.forEach(c=>{t?t+=`import './${c}';
-`:t=`import './${c}';
-`}),d.writeFileSync(a,`${t}
-${m}`)}}}};n.exports.default=n.exports});export default b();
