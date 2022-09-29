@@ -1,15 +1,20 @@
 import fs from 'fs'
 import { resolve } from 'path'
+import type { PluginOption, ResolvedConfig } from 'vite'
 
-let viteConfig
+interface Params {
+  paths: string[]
+}
 
-export default function libFile(params = []) {
+let viteConfig: ResolvedConfig
+
+export default function libFile(params: Params): PluginOption {
 	return {
 		name: 'lib-file',
 		apply: 'build',
 		enforce: 'post',
 
-		configResolved(resolvedConfig) {
+		configResolved(resolvedConfig: ResolvedConfig) {
 			viteConfig = resolvedConfig
 		},
 
@@ -35,6 +40,7 @@ export default function libFile(params = []) {
 				return
 			}
 			for (const file of files) {
+        // @ts-ignore
 				if (!bundle[file].isEntry) {
 					// only for entry
 					continue
