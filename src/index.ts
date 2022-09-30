@@ -26,7 +26,7 @@ module.exports = function libFile(params: Params): Plugin {
 			}
 			if (!viteConfig.build || !viteConfig.build.lib) {
 				// only for lib build
-				console.warn('vite-plugin-lifile only works in lib mode.')
+				console.warn('vite-plugin-libfile only works in lib mode.')
 				return
 			}
 			if (option.format !== 'es') {
