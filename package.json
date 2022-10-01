@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-libfile",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This plugin will inject specified file into bundled js file using import statement",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
